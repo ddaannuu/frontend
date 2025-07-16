@@ -4,7 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import Categories from "../views/Categories.vue";
 // import Product from '../views/Product.vue'
 import Business from "../views/Business.vue";
-import Workstastion from "../views/Workstastion.vue";
+import workstastion from "../views/Workstastion.vue";
 import ProductDetail from "@/views/ProductDetail.vue";
 import Students from "@/views/Students.vue";
 import VideoEditing from "@/views/VideoEditing.vue";
@@ -29,7 +29,7 @@ const routes = [
   { path: "/categories", name: "categories", component: Categories },
   //{ path: '/products', name: 'Product', component: Product },
   { path: "/business", name: "Business", component: Business },
-  { path: "/workstastion", name: "workstastion", component: Workstastion },
+  { path: "/workstastion", name: "workstastion", component: workstastion },
   { path: "/product/:id", name: "productDetail", component: ProductDetail },
   { path: "/students", name: "students", component: Students },
   { path: "/videoediting", name: "videoEditing", component: VideoEditing },
