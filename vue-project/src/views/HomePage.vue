@@ -62,7 +62,7 @@
       <div class="left-top">
         <div class="product reveal">
           <img src="../assets/Images/LENOVO.png" alt="Lenovo LEGION" />
-          <h2><strong>About Us</strong></h2>
+          <h2><strong>About Us.</strong></h2>
           <p>
             Selamat datang di Technologia, sumber terpercaya Anda untuk segala hal tentang laptop! Kami hadir untuk membantu Anda memahami dunia teknologi yang terus berkembang, khususnya dalam hal perangkat laptop. Di sini, Anda akan
             menemukan review mendalam, perbandingan produk, panduan pembelian, hingga tips dan trik yang berguna untuk menunjang produktivitas dan pengalaman komputasi Anda.
