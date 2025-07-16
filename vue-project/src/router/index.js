@@ -25,8 +25,8 @@ import EditBestSeller from "@/views/products/EditBestSeller.vue";
 
 const routes = [
   { path: "/", redirect: "/homepage" },
-  { path: "/homepage", name: "HomePage", component: HomePage },
-  { path: "/categories", name: "Categories", component: Categories },
+  { path: "/homepage", name: "homepage", component: HomePage },
+  { path: "/categories", name: "categories", component: Categories },
   //{ path: '/products', name: 'Product', component: Product },
   { path: "/business", name: "Business", component: Business },
   { path: "/workstastion", name: "Workstastion", component: Workstastion },
