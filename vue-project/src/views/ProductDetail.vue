@@ -135,7 +135,7 @@ export default {
     const slug = this.$route.params.id;
     try {
  
-      const res = await fetch(`http://localhost/technologia/CI3/index.php/products/get_by_slug/${slug}`);
+      const res = await fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/get_by_slug/${slug}`);
 
       const data = await res.json();
 

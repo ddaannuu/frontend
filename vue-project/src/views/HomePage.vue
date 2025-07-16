@@ -312,7 +312,7 @@ export default {
       console.error("Gagal mengambil produk:", err);
     }
     try {
-      const res = await fetch("http://localhost/technologia/CI3/index.php/product_api/get_best_seller");
+      const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/Product_api/get_best_seller");
       const data = await res.json();
       if (!data.error) {
         this.bestSellers = data;
@@ -323,7 +323,7 @@ export default {
       console.error("Gagal mengambil produk:", err);
     }
      try {
-      const res = await fetch("http://localhost/technologia/CI3/index.php/product_api/get_on_sale");
+      const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/Product_api/get_on_sale");
       const data = await res.json();
       if (!data.error) {
         this.onSale = data;
