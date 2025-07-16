@@ -4,7 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import Categories from "../views/Categories.vue";
 // import Product from '../views/Product.vue'
 import Business from "../views/Business.vue";
-import workstastion from "../views/Workstastion.vue";
+import workstastion from "../views/workstastion.vue";
 import ProductDetail from "@/views/ProductDetail.vue";
 import Students from "@/views/Students.vue";
 import VideoEditing from "@/views/VideoEditing.vue";
