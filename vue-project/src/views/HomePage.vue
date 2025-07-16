@@ -301,7 +301,7 @@ export default {
   },
   async created() {
     try {
-      const res = await fetch("http://localhost/technologia/CI3/index.php/product_api/get_new_arrival");
+      const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/Product_api/get_new_arrival");
       const data = await res.json();
       if (!data.error) {
         this.products = data;
