@@ -24,15 +24,14 @@
           <input type="password" v-model="password" required />
         </div>
 
-        <div class="captcha-box">
-          <!-- reCAPTCHA v2 checkbox -->
+        <!-- <div class="captcha-box">
           <div
             class="g-recaptcha"
             :data-sitekey="recaptchaSiteKey"
             data-theme="light"
             data-size="normal"
           ></div>
-        </div>
+        </div> -->
 
         <div>
           <button type="submit" :disabled="loading">
