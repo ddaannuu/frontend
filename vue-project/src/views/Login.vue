@@ -92,7 +92,7 @@ export default {
           body: JSON.stringify({
             username: this.username,
             password: this.password,
-            'g-recaptcha-response': captchaResponse
+            // 'g-recaptcha-response': captchaResponse
           })
         });
 
