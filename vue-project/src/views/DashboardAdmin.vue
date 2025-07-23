@@ -102,7 +102,7 @@ export default {
   },
   methods: {
     fetchUsers() {
-      fetch('http://localhost/technologia/CI3/index.php/users/list_api', {
+      fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
         credentials: 'include'
       })
         .then(res => res.json())
@@ -115,7 +115,7 @@ export default {
     },
     deleteUser(id) {
       if (confirm('Yakin ingin menghapus user ini?')) {
-        fetch(`http://localhost/technologia/CI3/index.php/users/delete_user_api/${id}`, {
+        fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/delete_user_api/${id}`, {
           method: 'DELETE',
           credentials: 'include'
         })
@@ -135,7 +135,7 @@ export default {
       }
     },
     logout() {
-      fetch('http://localhost/technologia/CI3/index.php/auth/logout_api', {
+      fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/logout_api', {
         credentials: 'include'
       })
         .then(res => res.json())

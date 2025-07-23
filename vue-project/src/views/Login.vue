@@ -59,13 +59,13 @@ export default {
   mounted() {
     document.body.classList.add("login");
 
-    if (!window.grecaptcha) {
-      const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js';
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
+    // if (!window.grecaptcha) {
+    //   const script = document.createElement('script');
+    //   script.src = 'https://www.google.com/recaptcha/api.js';
+    //   script.async = true;
+    //   script.defer = true;
+    //   document.head.appendChild(script);
+    // }
   },
   beforeUnmount() {
     document.body.classList.remove("login");
@@ -76,13 +76,13 @@ export default {
       this.successMessage = '';
       this.loading = true;
 
-      const captchaResponse = grecaptcha.getResponse();
+      // const captchaResponse = grecaptcha.getResponse();
 
-      if (!captchaResponse) {
-        this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
-        this.loading = false;
-        return;
-      }
+      // if (!captchaResponse) {
+      //   this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
+      //   this.loading = false;
+      //   return;
+      // }
 
       try {
         const response = await fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/login_api', {
@@ -109,7 +109,7 @@ export default {
         this.errors.push('Gagal terhubung ke server.');
       } finally {
         this.loading = false;
-        grecaptcha.reset();
+        // grecaptcha.reset();
       }
     }
   }
