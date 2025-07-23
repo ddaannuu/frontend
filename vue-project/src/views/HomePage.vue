@@ -255,7 +255,7 @@
             <div class="profile-card">
                <a href="profil_vianda" style="text-decoration: none; color: inherit">
                 
-              <img src="../public/Images/Vianda.jpg" alt="Vianda" class="profile-img" />
+              <img src="../assets/Images/Vianda.jpg" alt="Vianda" class="profile-img" />
               <div class="profile-name">Vianda Retnaningtiyas Purbandari Karetji 23.11.5445</div>
               <div class="profile-desc">UI/UX - Front End Developper</div>
               </a>
