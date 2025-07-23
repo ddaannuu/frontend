@@ -4,7 +4,7 @@ import HomePage from "../views/HomePage.vue";
 import Categories from "../views/Categories.vue";
 // import Product from '../views/Product.vue'
 import Business from "../views/Business.vue";
-import workstastion from "../views/workstastion.vue";
+import Workstastion from "../views/Workstastion.vue";
 import ProductDetail from "@/views/ProductDetail.vue";
 import Students from "@/views/Students.vue";
 import VideoEditing from "@/views/VideoEditing.vue";
@@ -25,14 +25,14 @@ import EditBestSeller from "@/views/products/EditBestSeller.vue";
 
 const routes = [
   { path: "/", redirect: "/homepage" },
-  { path: "/homepage", name: "homepage", component: HomePage },
-  { path: "/categories", name: "categories", component: Categories },
+  { path: "/homepage", name: "HomePage", component: HomePage },
+  { path: "/categories", name: "Categories", component: Categories },
   //{ path: '/products', name: 'Product', component: Product },
   { path: "/business", name: "Business", component: Business },
-  { path: "/workstastion", name: "workstastion", component: workstastion },
-  { path: "/product/:id", name: "productDetail", component: ProductDetail },
-  { path: "/students", name: "students", component: Students },
-  { path: "/videoediting", name: "videoEditing", component: VideoEditing },
+  { path: "/workstastion", name: "Workstastion", component: Workstastion },
+  { path: "/product/:id", name: "ProductDetail", component: ProductDetail },
+  { path: "/students", name: "Students", component: Students },
+  { path: "/videoediting", name: "VideoEditing", component: VideoEditing },
   { path: "/profil_danu", name: "Profil_danu", component: Profil_danu },
   { path: "/profil_baskara", name: "Profil_baskara", component: Profil_baskara },
   { path: "/profil_vianda", name: "Profil_vianda", component: Profil_vianda },
