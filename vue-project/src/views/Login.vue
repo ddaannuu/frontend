@@ -1,14 +1,14 @@
 <template>
   <div class="page-wrapper">
     <div class="container-login">
-      <h2>Login User.</h2>
+      <h2>Login User</h2>
 
-      <!-- Pesan sukses -->
+  
       <div v-if="successMessage" class="success">
         <p>{{ successMessage }}</p>
       </div>
 
-      <!-- Pesan error -->
+  
       <div v-if="errors.length > 0" class="errors">
         <p v-for="(error, index) in errors" :key="index">{{ error }}</p>
       </div>
@@ -24,14 +24,15 @@
           <input type="password" v-model="password" required />
         </div>
 
-        <!-- <div class="captcha-box">
+        <div class="captcha-box">
+      
           <div
             class="g-recaptcha"
             :data-sitekey="recaptchaSiteKey"
             data-theme="light"
             data-size="normal"
           ></div>
-        </div> -->
+        </div>
 
         <div>
           <button type="submit" :disabled="loading">
@@ -52,11 +53,20 @@ export default {
       password: '',
       errors: [],
       successMessage: '',
-      loading: false
+      loading: false,
+      recaptchaSiteKey: '6Lc7l5ArAAAAADXv489EhSJzLrPGYZmOFX1f9Jxm'
     };
   },
   mounted() {
     document.body.classList.add("login");
+
+    if (!window.grecaptcha) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   },
   beforeUnmount() {
     document.body.classList.remove("login");
@@ -67,22 +77,25 @@ export default {
       this.successMessage = '';
       this.loading = true;
 
+      const captchaResponse = grecaptcha.getResponse();
+
+      if (!captchaResponse) {
+        this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
+        this.loading = false;
+        return;
+      }
+
       try {
-          
         const response = await fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/login_api', {
           method: 'POST',
           credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             username: this.username,
-            password: this.password
+            password: this.password,
+            'g-recaptcha-response': captchaResponse
           })
         });
-
-        if (!response.ok) {
-          // error HTTP seperti 500, 404
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
 
         const result = await response.json();
 
@@ -91,18 +104,18 @@ export default {
           this.successMessage = result.message;
           this.$router.push('/dashboard');
         } else {
-          this.errors.push(result.message || 'Login gagal.');
+          this.errors.push(result.message);
         }
       } catch (error) {
-        this.errors.push('Gagal terhubung ke server: ' + error.message);
+        this.errors.push('Gagal terhubung ke server.');
       } finally {
         this.loading = false;
+        grecaptcha.reset();
       }
     }
   }
 };
 </script>
-
 
 <style scoped>
 .page-wrapper {
