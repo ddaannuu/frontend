@@ -3,12 +3,10 @@
     <div class="container-login">
       <h2>Login User</h2>
 
-  
       <div v-if="successMessage" class="success">
         <p>{{ successMessage }}</p>
       </div>
 
-  
       <div v-if="errors.length > 0" class="errors">
         <p v-for="(error, index) in errors" :key="index">{{ error }}</p>
       </div>
@@ -22,16 +20,6 @@
         <div>
           <label for="password">Password:</label>
           <input type="password" v-model="password" required />
-        </div>
-
-        <div class="captcha-box">
-      
-          <div
-            class="g-recaptcha"
-            :data-sitekey="recaptchaSiteKey"
-            data-theme="light"
-            data-size="normal"
-          ></div>
         </div>
 
         <div>
@@ -53,20 +41,11 @@ export default {
       password: '',
       errors: [],
       successMessage: '',
-      loading: false,
-      recaptchaSiteKey: '6Lc7l5ArAAAAADXv489EhSJzLrPGYZmOFX1f9Jxm'
+      loading: false
     };
   },
   mounted() {
     document.body.classList.add("login");
-
-    if (!window.grecaptcha) {
-      const script = document.createElement('script');
-      script.src = 'https://www.google.com/recaptcha/api.js';
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
   },
   beforeUnmount() {
     document.body.classList.remove("login");
@@ -77,14 +56,6 @@ export default {
       this.successMessage = '';
       this.loading = true;
 
-      const captchaResponse = grecaptcha.getResponse();
-
-      if (!captchaResponse) {
-        this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
-        this.loading = false;
-        return;
-      }
-
       try {
         const response = await fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/login_api', {
           method: 'POST',
@@ -92,8 +63,7 @@ export default {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             username: this.username,
-            password: this.password,
-            'g-recaptcha-response': captchaResponse
+            password: this.password
           })
         });
 
@@ -110,7 +80,6 @@ export default {
         this.errors.push('Gagal terhubung ke server.');
       } finally {
         this.loading = false;
-        grecaptcha.reset();
       }
     }
   }
@@ -118,6 +87,7 @@ export default {
 </script>
 
 <style scoped>
+/* ... CSS TETAP SAMA ... */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -187,9 +157,5 @@ export default {
 }
 .container-login button:hover {
   background: #584fe0;
-}
-.captcha-box {
-  margin-bottom: 1rem;
-  text-align: center;
 }
 </style>
