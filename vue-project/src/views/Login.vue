@@ -59,7 +59,6 @@ export default {
       try {
         const response = await fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/login_api', {
           method: 'POST',
-          credentials: 'include',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             username: this.username,
