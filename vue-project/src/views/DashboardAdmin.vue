@@ -107,8 +107,13 @@ export default {
       })
         .then(res => res.json())
         .then(data => {
-          this.users = data;
+          if (data.status) {
+            this.users = data.data;
+          } else {
+            this.errors.push("Gagal memuat data user.");
+          }
         })
+
         .catch(() => {
           alert('Gagal mengambil data user.');
         });
