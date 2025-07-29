@@ -77,7 +77,7 @@ export default {
         const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/users/create_api", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          credentials: "include",
+          // credentials: "include",
           body: JSON.stringify(this.form),
         });
 
