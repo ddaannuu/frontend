@@ -118,9 +118,10 @@ export default {
       }
     })
     .catch(err => {
-      console.error("Gagal fetch:", err);
-      alert("Fetch error: " + err.message);
-    });
+  console.error("Detail error:", err);
+  alert("Gagal mengambil data: " + err.message);
+});
+
 }
 ,
 
