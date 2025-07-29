@@ -105,7 +105,7 @@ export default {
       fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
       method: 'GET',
       mode: 'cors',
-      // credentials: 'include'
+      credentials: 'include'
     })
 
     .then(res => res.json())
