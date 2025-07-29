@@ -117,7 +117,14 @@ export default {
         alert(data.message || 'Gagal memuat data.');
       }
     })
-    .catch(err => {
+    .catch(async err => {
+  try {
+    const raw = await err.response.text();
+    console.error("RAW response:", raw);
+  } catch (e) {
+    console.error("Tidak bisa ambil response body:", e);
+  }
+
   console.error("Detail error:", err);
   alert("Gagal mengambil data: " + err.message);
 });
