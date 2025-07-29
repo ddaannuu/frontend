@@ -102,22 +102,23 @@ export default {
   },
   methods: {
     fetchUsers() {
-      fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
-        credentials: 'include'
-      })
-        .then(res => res.json())
-        .then(data => {
-          if (data.status) {
-            this.users = data.data;
-          } else {
-            this.errors.push("Gagal memuat data user.");
-          }
-        })
+  fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
+    credentials: 'include'
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log("HASIL DARI API:", data); // Tambahkan ini
+      if (data.status) {
+        this.users = data.data;  // ← Pastikan ini array
+      } else {
+        alert("Gagal memuat data user.");
+      }
+    })
+    .catch((err) => {
+      console.error("Fetch Error:", err);
+    });
+},
 
-        .catch(() => {
-          alert('Gagal mengambil data user.');
-        });
-    },
     deleteUser(id) {
       if (confirm('Yakin ingin menghapus user ini?')) {
         fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/delete_user_api/${id}`, {

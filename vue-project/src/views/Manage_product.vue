@@ -6,7 +6,7 @@
         <span>
           Halo, {{ user.nama_lengkap }} ({{ user.role }}) |
         </span>
-        <a href="http://localhost:5173/">Halaman Utama</a>
+        <a href="https://nice-flower-0c59cd800.1.azurestaticapps.net/">Halaman Utama</a>
       </div>
     </div>
 
