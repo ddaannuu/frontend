@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <div class="container-login">
-      <h2>Login User.</h2>
+      <h2>Login User</h2>
 
       <div v-if="successMessage" class="success">
         <p>{{ successMessage }}</p>

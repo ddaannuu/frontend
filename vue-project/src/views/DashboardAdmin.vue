@@ -129,6 +129,7 @@ export default {
       if (confirm('Yakin ingin menghapus user ini?')) {
         fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/delete_user_api/${id}`, {
           method: 'DELETE',
+        mode: 'cors',
           credentials: 'include'
         })
           .then(res => res.json())
