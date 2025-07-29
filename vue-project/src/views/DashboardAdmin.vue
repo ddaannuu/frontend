@@ -103,40 +103,35 @@ export default {
   methods: {
     fetchUsers() {
       fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'include'
-    })
-
-    .then(res => res.json())
-    .then(data => {
-      console.log("RESPON API:", data); // 👈 Debug respons
-      if (data.status && data.data) {
-        this.users = data.data;
-      } else {
-        alert(data.message || 'Gagal memuat data.');
-      }
-    })
-    .catch(async err => {
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'include'
+})
+.then(async res => {
+  const text = await res.text();
   try {
-    const raw = await err.response.text();
-    console.error("RAW response:", raw);
+    const data = JSON.parse(text);
+    console.log("RESPON API:", data);
+    if (data.status && data.data) {
+      this.users = data.data;
+    } else {
+      alert(data.message || 'Gagal memuat data.');
+    }
   } catch (e) {
-    console.error("Tidak bisa ambil response body:", e);
+    console.error("Response bukan JSON:", text);
+    alert("Response bukan JSON. Cek server.");
   }
-
-  console.error("Detail error:", err);
+})
+.catch(err => {
+  console.error("Gagal fetch:", err);
   alert("Gagal mengambil data: " + err.message);
 });
 
-}
-,
-
+    },
     deleteUser(id) {
       if (confirm('Yakin ingin menghapus user ini?')) {
         fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/delete_user_api/${id}`, {
           method: 'DELETE',
-        mode: 'cors',
           credentials: 'include'
         })
           .then(res => res.json())
@@ -156,9 +151,7 @@ export default {
     },
     logout() {
       fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/logout_api', {
-        credentials: 'include',
-         method: 'GET',
-        mode: 'cors'
+        credentials: 'include'
       })
         .then(res => res.json())
         .then(result => {
