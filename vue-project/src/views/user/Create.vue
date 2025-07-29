@@ -74,7 +74,7 @@ export default {
       this.success = false;
 
       try {
-        const res = await fetch("http://localhost/technologia/CI3/index.php/users/create_api", {
+        const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/users/create_api", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
