@@ -102,11 +102,11 @@ export default {
   },
   methods: {
     fetchUsers() {
-  fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
-  method: 'GET',
-  mode: 'cors',
-  credentials: 'include'
-})
+      fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
+      method: 'GET',
+      mode: 'cors',
+      // credentials: 'include'
+    })
 
     .then(res => res.json())
     .then(data => {
