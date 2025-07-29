@@ -107,17 +107,19 @@ export default {
   })
     .then(res => res.json())
     .then(data => {
-      console.log("HASIL DARI API:", data); // Tambahkan ini
-      if (data.status) {
-        this.users = data.data;  // ← Pastikan ini array
+      console.log("RESPON API:", data); // 👈 Debug respons
+      if (data.status && data.data) {
+        this.users = data.data;
       } else {
-        alert("Gagal memuat data user.");
+        alert(data.message || 'Gagal memuat data.');
       }
     })
-    .catch((err) => {
-      console.error("Fetch Error:", err);
+    .catch(err => {
+      console.error("Gagal fetch:", err);
+      alert("Fetch error: " + err.message);
     });
-},
+}
+,
 
     deleteUser(id) {
       if (confirm('Yakin ingin menghapus user ini?')) {
