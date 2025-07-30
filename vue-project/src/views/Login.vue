@@ -52,7 +52,7 @@ export default {
       errors: [],
       successMessage: '',
       loading: false,
-      recaptchaSiteKey: '6LesKngrAAAAAFLlsxjPQTDo1VFpRcVmH38lsE6g'
+      recaptchaSiteKey: '6Lc7l5ArAAAAADXv489EhSJzLrPGYZmOFX1f9Jxm'
     };
   },
   mounted() {
