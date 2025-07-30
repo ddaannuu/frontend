@@ -69,7 +69,7 @@ export default {
     fetchProduct() {
       const id = this.$route.params.id
       fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/get_best_seller_by_id/${id}`, {
-        credentials: 'include'
+        // credentials: 'include'
       })
         .then(res => res.json())
         .then(data => {
@@ -88,7 +88,7 @@ export default {
       fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/update_best_seller/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
+        // credentials: 'include',
         body: JSON.stringify(this.form)
       })
         .then(res => res.json())
