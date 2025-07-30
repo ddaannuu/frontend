@@ -144,7 +144,7 @@ export default {
   },
   methods: {
     fetchAll() {
-      fetch('http://localhost/technologia/CI3/index.php/products/fetch_all')
+      fetch('https://ci3-technologia.azurewebsites.net/index.php/products/fetch_all')
         .then(res => res.json())
         .then(data => {
           this.products = data.products || [];
@@ -156,13 +156,13 @@ export default {
     deleteProduct(id, type) {
       if (!confirm('Yakin ingin menghapus produk ini?')) return;
 
-      fetch(`http://localhost/technologia/CI3/index.php/products/delete/${id}?type=${type}`, {
+      fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/delete/${id}?type=${type}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: '_method=DELETE',
-        credentials: 'include'
+        // credentials: 'include'
       })
         .then(res => res.json())
         .then(result => {
