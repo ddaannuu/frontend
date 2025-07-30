@@ -21,6 +21,16 @@
           <label for="password">Password:</label>
           <input type="password" v-model="password" required />
         </div>
+        
+         <div class="captcha-box">
+      
+          <div
+            class="g-recaptcha"
+            :data-sitekey="recaptchaSiteKey"
+            data-theme="light"
+            data-size="normal"
+          ></div>
+        </div>
 
         <div>
           <button type="submit" :disabled="loading">
@@ -41,11 +51,20 @@ export default {
       password: '',
       errors: [],
       successMessage: '',
-      loading: false
+      loading: false,
+      recaptchaSiteKey: '6LesKngrAAAAAFLlsxjPQTDo1VFpRcVmH38lsE6g'
     };
   },
   mounted() {
     document.body.classList.add("login");
+
+    if (!window.grecaptcha) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
   },
   beforeUnmount() {
     document.body.classList.remove("login");
@@ -56,13 +75,22 @@ export default {
       this.successMessage = '';
       this.loading = true;
 
+      const captchaResponse = grecaptcha.getResponse();
+
+      if (!captchaResponse) {
+        this.errors.push('Silakan centang reCAPTCHA terlebih dahulu.');
+        this.loading = false;
+        return;
+      }
+
       try {
         const response = await fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/login_api', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             username: this.username,
-            password: this.password
+            password: this.password,
+            'g-recaptcha-response': captchaResponse
           })
         });
 
@@ -79,6 +107,7 @@ export default {
         this.errors.push('Gagal terhubung ke server.');
       } finally {
         this.loading = false;
+         grecaptcha.reset();
       }
     }
   }
@@ -157,4 +186,9 @@ export default {
 .container-login button:hover {
   background: #584fe0;
 }
+.captcha-box {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 </style>
