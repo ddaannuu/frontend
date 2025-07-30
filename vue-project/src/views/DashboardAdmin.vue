@@ -105,11 +105,12 @@ export default {
       fetch('https://ci3-technologia.azurewebsites.net/index.php/users/list_api', {
   method: 'GET',
   mode: 'cors',
-  credentials: 'include', // ini yang bikin butuh preflight
+  // credentials: 'include',
   headers: {
-    'Content-Type': 'application/json' // WAJIB agar CORS preflight valid
+    'Content-Type': 'application/json' // WAJIB, agar preflight valid
   }
 })
+
 
 .then(async res => {
   const text = await res.text();
