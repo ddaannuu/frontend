@@ -81,8 +81,8 @@ export default {
   methods: {
     async fetchUser() {
       try {
-        const res = await fetch(`http://localhost/technologia/CI3/index.php/users/get_user_by_id_api/${this.$route.params.id}`, {
-          credentials: 'include'
+        const res = await fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/get_user_by_id_api/${this.$route.params.id}`, {
+          // credentials: 'include'
         });
         if (!res.ok) throw new Error('Gagal ambil user');
         const userData = await res.json();
@@ -97,9 +97,9 @@ export default {
       this.success = false;
 
       try {
-        const res = await fetch(`http://localhost/technologia/CI3/index.php/users/update_user_api/${this.$route.params.id}`, {
+        const res = await fetch(`https://ci3-technologia.azurewebsites.net/index.php/users/update_user_api/${this.$route.params.id}`, {
           method: 'POST',
-          credentials: 'include',
+          // credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           },
