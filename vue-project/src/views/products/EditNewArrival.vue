@@ -70,8 +70,8 @@ export default {
   methods: {
     async fetchProduct() {
       try {
-        const res = await fetch(`http://localhost/technologia/CI3/index.php/products/get_by_id/${this.$route.params.id}`, {
-          credentials: 'include'
+        const res = await fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/get_by_id/${this.$route.params.id}`, {
+          // credentials: 'include'
         });
         const data = await res.json();
         if (data) {
@@ -86,9 +86,9 @@ export default {
     async handleSubmit() {
       this.errors = [];
       try {
-        const res = await fetch(`http://localhost/technologia/CI3/index.php/products/update/${this.$route.params.id}`, {
+        const res = await fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/update/${this.$route.params.id}`, {
           method: 'POST',
-          credentials: 'include',
+          // credentials: 'include',
           headers: {
             'Content-Type': 'application/json'
           },

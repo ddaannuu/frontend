@@ -68,7 +68,7 @@ export default {
   methods: {
     fetchProduct() {
       const id = this.$route.params.id
-      fetch(`http://localhost/technologia/CI3/index.php/products/get_best_seller_by_id/${id}`, {
+      fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/get_best_seller_by_id/${id}`, {
         credentials: 'include'
       })
         .then(res => res.json())
@@ -85,7 +85,7 @@ export default {
     },
     updateProduct() {
       const id = this.$route.params.id
-      fetch(`http://localhost/technologia/CI3/index.php/products/update_best_seller/${id}`, {
+      fetch(`https://ci3-technologia.azurewebsites.net/index.php/products/update_best_seller/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

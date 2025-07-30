@@ -125,7 +125,7 @@ export default {
       }
 
       try {
-        const res = await fetch("http://localhost/technologia/CI3/index.php/products/create_form", {
+        const res = await fetch("https://ci3-technologia.azurewebsites.net/index.php/products/create_form", {
           method: "POST",
           body: formData,
         });
