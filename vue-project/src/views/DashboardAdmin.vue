@@ -156,7 +156,7 @@ export default {
     },
     logout() {
       fetch('https://ci3-technologia.azurewebsites.net/index.php/auth/logout_api', {
-        credentials: 'include'
+        // credentials: 'include'
       })
         .then(res => res.json())
         .then(result => {
