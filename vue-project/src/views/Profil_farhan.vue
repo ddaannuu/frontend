@@ -5,7 +5,7 @@
       <div class="profile-name-section">
         <h1>Farhan Ardiansyah</h1>
         <p class="nim">NIM: 23.11.5464</p>
-        <p class="role">UI Designer & Front End Developer</p>
+        <p class="role">UI UX Designer & Front End Developer</p>
       </div>
     </div>
 

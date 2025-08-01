@@ -5,7 +5,7 @@
       <div class="profile-name-section">
         <h1>Vianda Retnaningtiyas Purbandari Karetji</h1>
         <p class="nim">NIM: 23.11.5445</p>
-        <p class="role">UI/UX Designer & Front End Developer</p>
+        <p class="role">UI/UX Designer, Front End Developer & Database Administrator</p>
       </div>
     </div>
 

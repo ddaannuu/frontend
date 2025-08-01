@@ -5,7 +5,7 @@
       <div class="profile-name-section">
         <h1>Rifky Danu Asmoro</h1>
         <p class="nim">NIM: 23.11.5489</p>
-        <p class="role">UI/UX Designer & Front End Developer</p>
+        <p class="role">Front End Developer & Backend Developer</p>
       </div>
     </div>
 

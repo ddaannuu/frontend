@@ -5,7 +5,7 @@
       <div class="profile-name-section">
         <h1>Stefanus Arya Bayu Samudra Bataona</h1>
         <p class="nim">NIM: 23.11.5477</p>
-        <p class="role">UI/UX Designer & Front End Developer</p>
+        <p class="role">UI/UX Designer, Front End Developer & Backend Developer</p>
       </div>
     </div>
 
