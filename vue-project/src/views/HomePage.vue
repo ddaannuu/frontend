@@ -213,8 +213,8 @@
            <div class="product-card discount" v-for="(product, index) in onSale" :key="index">
             <a :href="`/product/${product.slug}`" style="text-decoration: none; color: inherit">
               <div class="image-slide-wrapper">
-                <img :src="getImageUrl(product.image_1)" alt="Gambar produk" />
-                <img :src="getImageUrl(product.image_2 || product.image_1)" alt="Gambar lain" />
+                <img :src="getImageUrl(product.image_1)" :alt="product.title" class="product-img first-img" style="height: 200px; width: 280px" />
+                <img :src="getImageUrl(product.image_2 || product.image_1)" :alt="product.title" class="product-img second-img" style="height: 200px; width: 280px" />
 
               </div>
               <h3 class="product-title">{{ product.title }}</h3>
