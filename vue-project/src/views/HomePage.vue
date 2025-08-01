@@ -240,7 +240,7 @@
               <a href="profil_danu" style="text-decoration: none; color: inherit">
                 <img src="../assets/Images/Danu.jpg" alt="Danu" class="profile-img" />
                 <div class="profile-name">Rifky Danu Asmoro 23.11.5489</div>
-                <div class="profile-desc">UI/UX - Front End Developper</div>
+                <div class="profile-desc">Frontend - Backend</div>
               </a>
             </div>
 
@@ -248,7 +248,7 @@
             <a href="profil_baskara" style="text-decoration: none; color: inherit">
               <img src="../assets/Images/Baskara.jpg" alt="Baskara" class="profile-img" />
               <div class="profile-name">I Made Baskara Saccid Ananda 23.11.5466</div>
-              <div class="profile-desc">UI/UX - Front End Developper</div>
+              <div class="profile-desc">UI/UX - Front End Developer</div>
             </a>
             </div>
 
@@ -257,7 +257,7 @@
                 
               <img src="../assets/Images/Vianda.jpg" alt="Vianda" class="profile-img" />
               <div class="profile-name">Vianda Retnaningtiyas Purbandari Karetji 23.11.5445</div>
-              <div class="profile-desc">UI/UX - Front End Developper</div>
+              <div class="profile-desc">UI/UX - Frontend- Database Administrator</div>
               </a>
             </div>
 
@@ -265,7 +265,7 @@
               <a href="profil_farhan" style="text-decoration: none; color: inherit">
               <img src="../assets/Images/Farhan.jpg" alt="Farhan" class="profile-img" />
               <div class="profile-name">Farhan Ardiansyah 23.11.5464</div>
-              <div class="profile-desc">UI- Front End Developper</div>
+              <div class="profile-desc">UI UX - Frontend</div>
               </a>
             </div>
 
@@ -273,7 +273,7 @@
                <a href="profil_arya" style="text-decoration: none; color: inherit">
               <img src="../assets/Images/Aryo.jpg" alt="Aryo" class="profile-img" />
               <div class="profile-name">Stefanus Arya Bayu Samudra Bataona 23.11.5477</div>
-              <div class="profile-desc">UI/UX - Front End Developper</div>
+              <div class="profile-desc">UI/UX - Frontend - Backend</div>
               </a>
             </div>
 
