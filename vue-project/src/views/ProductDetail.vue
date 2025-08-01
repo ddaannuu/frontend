@@ -102,8 +102,8 @@
         <div v-for="product in related" :key="product.id" class="product-card discount">
           <a :href="`/product/${product.slug}`" style="text-decoration: none; color: inherit">
             <div class="image-slide-wrapper">
-              <img :src="product.image_1" :alt="product.title + ' default'" class="product-img first-img" style="height: 200px; width: 280px" />
-              <img :src="product.image_2 || product.image_1" :alt="product.title + ' hover'" class="product-img second-img" style="height: 200px; width: 280px" />
+              <img :src="getImageUrl(product.image_1)" :alt="product.title + ' default'" class="product-img first-img" style="height: 200px; width: 280px" />
+              <img :src="getImageUrl(product.image_2 || product.image_1)" :alt="product.title + ' hover'" class="product-img second-img" style="height: 200px; width: 280px" />
             </div>
             <h3>{{ product.title }}</h3>
             <p>Status: {{ product.status || "Tersedia" }}</p>
@@ -179,6 +179,13 @@ export default {
     formatPrice(value) {
       return parseInt(value).toLocaleString("id-ID");
     },
+    methods: {
+    getImageUrl(imageName) {
+      if (!imageName) return ''; // kalau kosong, jangan munculin apa-apa
+      return `https://ci3-technologia.azurewebsites.net/uploads/${imageName}`;
+    }
+  }
+
   },
 };
 </script>
