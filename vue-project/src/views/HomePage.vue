@@ -55,7 +55,7 @@
     </div>
 
     <div class="header-center" id="about-us">
-      <h2 class="reveal" style="padding-top: 8rem">About Us.</h2>
+      <h2 class="reveal" style="padding-top: 8rem">About Us</h2>
     </div>
 
     <section class="products" id="products" style="padding-top: 7rem">
